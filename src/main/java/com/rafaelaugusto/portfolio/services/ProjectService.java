@@ -35,4 +35,11 @@ public class ProjectService {
         return projectList.stream().map(ProjectDTO::new).toList();
     }
 
+    public ProjectDTO findById(Long id){
+
+        Project result = projectRepository.findById(id).get();
+        return new ProjectDTO(result);
+
+    }
+
 }
