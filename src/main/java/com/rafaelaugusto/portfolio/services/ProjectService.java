@@ -30,6 +30,9 @@ public class ProjectService {
 
     }
 
-
+    public List<ProjectDTO> findAll(){
+        List<Project> projectList = projectRepository.findAll();
+        return projectList.stream().map(ProjectDTO::new).toList();
+    }
 
 }
