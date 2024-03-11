@@ -1,10 +1,9 @@
 package com.rafaelaugusto.portfolio.domain.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.rafaelaugusto.portfolio.domain.enums.ProjectStatus;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -12,6 +11,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class Project {
 
     @Id
@@ -22,5 +22,8 @@ public class Project {
     private String description;
     private String imgUrl;
     private String stacks;
+
+    @Enumerated(EnumType.STRING)
+    private ProjectStatus status;
 
 }
