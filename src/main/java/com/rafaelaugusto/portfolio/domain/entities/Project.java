@@ -18,9 +18,16 @@ public class Project {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @Column(length = 40, nullable = false)
     private String name;
+
+    @Column(columnDefinition = "TEXT", nullable = false)
     private String description;
+
+    @Column(nullable = false)
     private String imgUrl;
+
+    @Column(nullable = false)
     private String stacks;
 
     @Enumerated(EnumType.STRING)
