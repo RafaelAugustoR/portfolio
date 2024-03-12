@@ -5,6 +5,7 @@ import com.rafaelaugusto.portfolio.services.ProjectService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import java.util.List;
 
 @RestController
 @CrossOrigin("*")
@@ -19,4 +20,19 @@ public class ProjectController {
         projectService.create(request);
         return ResponseEntity.ok().build();
     }
+
+    @GetMapping("")
+    public List findAll(){
+        return projectService.findAll();
+    }
+
+    @GetMapping("{id}")
+    public ResponseEntity findById(Long id){
+
+        var result = projectService.findById(id);
+        return ResponseEntity.ok().body(result);
+
+    }
+
+
 }
