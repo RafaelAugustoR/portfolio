@@ -23,6 +23,7 @@ public class ProjectService {
                 .stacks(request.getStacks())
                 .imgUrl(request.getImgUrl())
                 .status(request.getStatus())
+                .repositoryLink(request.getRepositoryLink())
                 .build();
 
 

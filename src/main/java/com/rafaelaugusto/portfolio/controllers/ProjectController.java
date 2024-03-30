@@ -22,6 +22,7 @@ public class ProjectController {
     }
 
     @GetMapping("")
+    @CrossOrigin(origins = "*")
     public List findAll(){
         return projectService.findAll();
     }

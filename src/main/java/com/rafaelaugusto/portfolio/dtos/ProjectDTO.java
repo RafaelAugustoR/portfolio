@@ -17,6 +17,7 @@ public class ProjectDTO {
     private String imgUrl;
     private String stacks;
     private ProjectStatus status;
+    private String repositoryLink;
 
     public ProjectDTO(Project entity){
         BeanUtils.copyProperties(entity, this);
